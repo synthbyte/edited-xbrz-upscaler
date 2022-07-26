@@ -4,14 +4,14 @@
 const { ImageData } = require("canvas");
 
 // generates image with xbrz filter and applies it to the same canvas
-async function applyFilter(input, output) {
+async function applyFilter(input, output, scale) {
   const filter = new Filter();
   //Apply filter
   const inData = input.getContext('2d').getImageData(0, 0, input.width, input.height);
-  filter.Apply(inData.data, inData.width, inData.height, 4, true);
+  filter.Apply(inData.data, inData.width, inData.height, scale, true);
   let newPreview = new ImageData(Common.SizeX, Common.SizeY);
   newPreview.data.set(Common.ScaledImage);
-  output.getContext('2d').putImageData(newPreview, 0, 0);
+  output.getContext('2d').putImageData(newPreview, -scale, -scale);
 }
 
 // Zenju's XBRz nX family of filters
