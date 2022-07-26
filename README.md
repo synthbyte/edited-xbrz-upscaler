@@ -5,7 +5,7 @@ upscales an image using a modified form of xbrz
 * Install NodeJS
 * Download this repository and extract it
 * Run `npm i`
-* Replace `input.png` with an image of your choice (make sure it is named input.png`
+* Replace `input.png` with an image of your choice (make sure it is named `input.png`)
 * Run `node main.js` in cmd
 
 Works best with pixel art
